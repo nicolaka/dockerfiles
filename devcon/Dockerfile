@@ -34,6 +34,7 @@ RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
 	&& sudo tar -C /usr/local -xzf golang.tar.gz \
 	&& rm golang.tar.gz
 
+# Setting up GOPATH. For me, i'm using $HOME/code/go
 ENV HOME /root
 ENV GOPATH $HOME/code/go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
@@ -42,5 +43,7 @@ ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 USER root
 WORKDIR /root
 
+# Sample Bash Profile that will be overwritted if your mounted dir has a .profile
+ADD bash_profile  .profile
 # Running Bash
 CMD ["/bin/bash", "-l"]
