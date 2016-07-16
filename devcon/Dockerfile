@@ -34,13 +34,12 @@ RUN curl -fsSL "$GOLANG_DOWNLOAD_URL" -o golang.tar.gz \
 	&& sudo tar -C /usr/local -xzf golang.tar.gz \
 	&& rm golang.tar.gz
 
-ENV HOME /home/root
 ENV GOPATH $HOME/code/go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
-# Defining WORKDIR 
+# Setting WORKDIR and USER
 USER root
-WORKDIR /home/root
+WORKDIR /root
 
 # Running Bash
 CMD ["/bin/bash", "-l"]
