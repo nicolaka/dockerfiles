@@ -13,7 +13,8 @@ RUN set -ex \
     iproute2 \
     iftop \
     drill \
-    wireshark 
+    wireshark \
+    nmap
     
 CMD ["sh"]
 
