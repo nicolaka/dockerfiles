@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.7
 
 RUN set -ex \
     && apk update \
@@ -13,7 +13,8 @@ RUN set -ex \
     iproute2 \
     iftop \
     drill \
-    wireshark 
+    wireshark \
+    nmap
     
 CMD ["sh"]
 
